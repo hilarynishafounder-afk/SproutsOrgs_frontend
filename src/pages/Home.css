@@ -124,20 +124,59 @@
   height: 560px;
 }
 
-.preview-card {
+.preview-card.glass {
   position: absolute;
   width: 280px;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-gray);
+  box-shadow: var(--shadow-lg);
 }
 
-.preview-card.glass {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+[data-theme="dark"] .preview-card.glass {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .preview-card.card {
   padding: 32px;
 }
+
+.preview-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-blue);
+  color: var(--soft-blue);
+  margin-bottom: 24px;
+  transition: all var(--transition-base);
+}
+
+[data-theme="dark"] .preview-icon {
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--cyan-glow);
+}
+
+.preview-card:hover .preview-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--soft-blue);
+  color: white;
+}
+
+.preview-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+
+.preview-card p {
+  color: var(--subtext);
+  font-size: 0.95rem;
+}
+
 
 /* ===== UPCOMING WORKSHOPS PREVIEW ===== */
 .event-card-preview {
@@ -208,8 +247,8 @@
   border-radius: 24px;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: white;
+  border: 1px solid var(--border-gray);
+  background: var(--bg-card);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
   height: 100%;
 }
@@ -224,7 +263,7 @@
   position: relative;
   height: 240px;
   overflow: hidden;
-  background: #f8f9fa;
+  background: var(--bg-secondary);
 }
 
 .ach-tag {
@@ -245,7 +284,6 @@
 
 .ach-content {
   padding: 24px;
-  background: #ffffff !important;
 }
 
 .ach-content h3 {
@@ -253,7 +291,7 @@
   font-weight: 800;
   margin-bottom: 12px;
   line-height: 1.4;
-  color: #000000 !important;
+  color: var(--text-dark);
 }
 
 .ach-meta {
@@ -261,7 +299,7 @@
   flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 16px;
-  color: #0066cc !important;
+  color: var(--soft-blue);
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -273,11 +311,11 @@
 }
 
 .ach-content p {
-  color: #444444 !important;
+  color: var(--subtext);
   font-size: 0.95rem;
   line-height: 1.6;
-  font-weight: 400;
 }
+
 
 .cta-btns {
   display: flex;
@@ -378,8 +416,8 @@
     max-width: 100%;
     margin: 0 auto;
   }
-  .about-preview-img-wrap { height: 380px; margin-top: 20px; }
-  .preview-card { position: relative; margin: 0 auto !important; width: 100%; max-width: 320px; }
+  .about-preview-img-wrap { height: auto; margin-top: 40px; display: flex; flex-direction: column; gap: 24px; }
+  .preview-card.glass { position: relative; inset: auto; margin: 0 auto !important; width: 100%; max-width: 320px; transform: none !important; }
 }
 
 @media (max-width: 768px) {
@@ -394,6 +432,7 @@
   .stat-item { flex-direction: row; justify-content: space-between; width: 100%; padding: 0 20px; }
 
   .about-preview-img-wrap { height: auto; padding-bottom: 40px; }
+
 
   .clients-row { flex-direction: column; align-items: center; }
   .client-card { width: 100%; max-width: 300px; }
