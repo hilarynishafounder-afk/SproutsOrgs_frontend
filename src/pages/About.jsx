@@ -92,8 +92,26 @@ export default function About() {
         <div className="container">
           <div className="about-grid">
             <motion.div
-              className="about-image"
+              className="about-full-content"
               initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 style={{ marginBottom: '1.5rem', fontSize: '1.8rem', fontWeight: '800', lineHeight: '1.3' }} className="gradient-text">
+                Hi, I’m Hilary Nisha, Founder of Sprouts Orgs. <br />
+                <span style={{ fontSize: '1.2rem', color: 'var(--text-dark)', opacity: 0.9 }}>Founder of Sprouts Orgs</span>
+              </h2>
+              {about ? about.split('\n').map((p, i) => <p key={i}>{p}</p>) : (
+                <>
+                  <p>Sprouts Orgs is an MSME-registered EdTech and IT services company specializing in emerging technologies like Artificial Intelligence, Data Science, Machine Learning, Deep Learning, and Core Python. We focus on building a Learn–Build–Earn ecosystem through training, internships, and real-time projects.</p>
+                </>
+              )}
+            </motion.div>
+
+            <motion.div
+              className="about-image"
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
@@ -101,26 +119,10 @@ export default function About() {
               <div className="image-wrapper glass">
                 <img
                   src="https://ik.imagekit.io/Lourdu/Sprouts/about"
-                  alt="Team Collaboration and Learning"
+                  alt="Hilary Nisha - Founder of Sprouts Orgs"
                 />
                 <div className="image-accent"></div>
               </div>
-            </motion.div>
-
-            <motion.div
-              className="about-full-content"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              {about ? about.split('\n').map((p, i) => <p key={i}>{p}</p>) : (
-                <>
-                  <p>Sprouts Edutech and IT Services is an MSME-registered EdTech and IT services initiative focused on emerging technologies such as Artificial Intelligence, Data Science, Machine Learning, Deep Learning, and Core Python. Through regular workshops and training programs, including collaborations under initiatives like Naan Mudhalvan, our goal is to make AI education affordable and practical for students.</p>
-                  <p>Our vision is to build a “Learn–Build–Earn” ecosystem where college students are trained in advanced technologies, work on real-time industry projects, and gain freelancing opportunities while still studying. By integrating EdTech with IT services, we aim to create a student-driven innovation lab that provides cost-effective AI and automation solutions to startups and SMEs.</p>
-                  <p>This model simultaneously gives deserving young minds exposure to real work culture, helping them avoid the challenges and exploitation many students face when entering the tech industry. This scalable model empowers students with skills, income opportunities, and industry readiness while supporting businesses with accessible technology solutions.</p>
-                </>
-              )}
             </motion.div>
           </div>
         </div>
