@@ -264,7 +264,7 @@ export default function Home() {
                     <div className="card-image-wrapper">
                       <img 
                         className="card-image"
-                        src={event.image ? (event.image.startsWith('http') ? event.image : `http://localhost:5000${event.image}`) : 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=300&h=300&fit=crop'} 
+                        src={event.image ? (event.image.startsWith('http') ? event.image : `https://sproutsorgs-backend-k7fx.onrender.com${event.image}`) : 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=300&h=300&fit=crop'} 
                         alt={event.title} 
                         onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=300&h=300&fit=crop'; }} 
                       />

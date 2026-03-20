@@ -365,7 +365,7 @@ function HighlightsPanel({ items, onEdit, onRefresh }) {
               <div style={{ display: 'flex', gap: 4, marginTop: 4 }}>
                 {(Array.isArray(h.images) ? h.images : (typeof h.images === 'string' ? h.images.split(',').filter(Boolean) : [])).slice(0, 3).map((img, idx) => (
                   <div key={idx} style={{ width: 24, height: 24, borderRadius: 4, overflow: 'hidden', border: '1px solid var(--border-gray)' }}>
-                    <img src={img.startsWith('http') ? img : `http://localhost:5000${img}`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={img.startsWith('http') ? img : `https://sproutsorgs-backend-k7fx.onrender.com${img}`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                 ))}
                 {h.images?.length > 3 && <span style={{ fontSize: '0.7rem', opacity: 0.6 }}>+{h.images.length - 3}</span>}
@@ -569,7 +569,7 @@ function ImageInput({ label, value, onChange, onFileChange }) {
 
       {preview && (
         <div className="image-preview" style={{ height: 'auto', maxHeight: '300px' }}>
-          <img src={preview.startsWith('data:') || preview.startsWith('http') ? preview : `http://localhost:5000${preview}`} alt="Preview" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+          <img src={preview.startsWith('data:') || preview.startsWith('http') ? preview : `https://sproutsorgs-backend-k7fx.onrender.com${preview}`} alt="Preview" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
         </div>
       )}
     </div>
@@ -582,7 +582,7 @@ function MultiImageInput({ existingImages, onRemoveExisting, onFilesChange }) {
   const getImageUrl = (url) => {
     if (!url) return '';
     if (url.startsWith('data:') || url.startsWith('http')) return url;
-    return `http://localhost:5000${url}`;
+    return `https://sproutsorgs-backend-k7fx.onrender.com${url}`;
   };
 
   const handleFileChange = (e) => {
