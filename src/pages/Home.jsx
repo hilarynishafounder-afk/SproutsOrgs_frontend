@@ -76,11 +76,6 @@ export default function Home() {
   const [selectedClient, setSelectedClient] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    fetchData();
-  }, []);
-
   const fetchData = useCallback(async () => {
     try {
       const [compRes, eventRes] = await Promise.all([
@@ -171,7 +166,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=500&auto=format&fit=crop&fm=webp" 
                 alt="AI Innovation" 
                 className="about-side-img"
                 loading="lazy"
@@ -264,9 +259,10 @@ export default function Home() {
                     <div className="card-image-wrapper">
                       <img 
                         className="card-image"
-                        src={event.image ? (event.image.startsWith('http') ? event.image : `https://sproutsorgs-backend-8xrf.onrender.com${event.image}`) : 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=300&h=300&fit=crop'} 
+                        src={event.image ? (event.image.startsWith('http') ? event.image : `https://sproutsorgs-backend-8xrf.onrender.com${event.image}`) : 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400&h=250&fit=crop&auto=format&fm=webp'} 
                         alt={event.title} 
-                        onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=300&h=300&fit=crop'; }} 
+                        loading="lazy"
+                        onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&h=250&fit=crop'; }} 
                       />
                     </div>
                     <h3>{event.title}</h3>
