@@ -42,7 +42,13 @@ export default function Navbar() {
       <div className="nav-container container">
         <Link to="/" className="nav-logo">
           <div className="logo-icon">
-            <img src="https://ik.imagekit.io/Lourdu/Sprouts/logo.jpeg?updatedAt=1773849138906" alt="Sprouts Logo" />
+            <img 
+              src="https://ik.imagekit.io/Lourdu/Sprouts/logo.jpeg?updatedAt=1773849138906" 
+              alt="Sprouts Logo" 
+              width="40" 
+              height="40" 
+              fetchPriority="high" 
+            />
           </div>
           <div className="logo-text">
             <span className="logo-name">Sprouts</span>

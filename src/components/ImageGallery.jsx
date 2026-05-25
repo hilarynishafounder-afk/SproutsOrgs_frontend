@@ -91,6 +91,9 @@ const ImageGallery = ({ images: incomingImages }) => {
             <motion.img 
               src={getImageUrl(img)} 
               alt={`Slide ${i + 1}`} 
+              width="370"
+              height="247"
+              loading="lazy"
               onError={(e) => { e.target.src = 'https://ik.imagekit.io/Lourdu/Sprouts/logo.jpeg?updatedAt=1773849138906'; }} 
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.4 }}

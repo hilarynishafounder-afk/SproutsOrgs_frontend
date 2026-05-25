@@ -31,7 +31,13 @@ export default function Preloader() {
             opacity: { duration: 1 }
           }}
         >
-          <img src="https://ik.imagekit.io/Lourdu/Sprouts/logo.jpeg?updatedAt=1773849138906" alt="Sprouts Logo" />
+          <img 
+            src="https://ik.imagekit.io/Lourdu/Sprouts/logo.jpeg?updatedAt=1773849138906" 
+            alt="Sprouts Logo" 
+            width="80" 
+            height="80" 
+            fetchPriority="high" 
+          />
         </motion.div>
 
         <div className="preloader-text-inner">

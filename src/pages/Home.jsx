@@ -170,6 +170,8 @@ export default function Home() {
                 alt="AI Innovation" 
                 className="about-side-img"
                 loading="lazy"
+                width="372"
+                height="209"
               />
               <div className="image-overlay-glow"></div>
             </motion.div>
@@ -225,6 +227,8 @@ export default function Home() {
                         src={s.image} 
                         alt={s.title} 
                         loading="lazy"
+                        width="306"
+                        height="306"
                         onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&h=400&fit=crop'; }} 
                       />
                     </div>
