@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, lazy, Suspense, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
@@ -83,6 +83,7 @@ function PageWrap({ children }) {
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const handleReady = useCallback(() => setLoading(false), []);
 
   return (
     <ThemeProvider>
@@ -96,7 +97,7 @@ export default function App() {
       <ScrollProgress />
       
       <Router>
-        <AppContent onReady={() => setLoading(false)} />
+        <AppContent onReady={handleReady} />
       </Router>
     </ThemeProvider>
   );

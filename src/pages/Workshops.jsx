@@ -46,10 +46,7 @@ export default function Workshops() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    fetchEvents();
-  }, []);
+
 
   const fetchEvents = useCallback(async () => {
     try {
